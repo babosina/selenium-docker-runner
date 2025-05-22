@@ -2,7 +2,7 @@ services:
   vendor-portal:
     image: babosina/selenium-java
     environment:
-      - BROWSER=chrome
+      - BROWSER
       - hubHost=hub
       - THREAD_COUNT=5
       - TEST_SUITE=vendor-portal.xml
@@ -11,7 +11,7 @@ services:
   flight-reservation:
     image: babosina/selenium-java
     environment:
-      - BROWSER=firefox
+      - BROWSER
       - hubHost=hub
       - THREAD_COUNT=5
       - TEST_SUITE=flight-reservation.xml
