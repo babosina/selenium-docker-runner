@@ -1,0 +1,21 @@
+services:
+  hub:
+    image: selenium/hub:4.27
+  chrome:
+    image: selenium/node-chromium:4.27
+    depends_on:
+      - hub
+    deploy:
+      replicas: 1
+    env_file:
+      - .env
+    shm_size: "2g"
+  firefox:
+    image: selenium/node-firefox:4.27
+    depends_on:
+      - hub
+    deploy:
+      replicas: 1
+    env_file:
+      - .env
+    shm_size: "2g"

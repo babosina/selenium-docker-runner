@@ -1,0 +1,19 @@
+services:
+  vendor-portal:
+    image: babosina/selenium-java
+    environment:
+      - BROWSER=chrome
+      - hubHost=hub
+      - THREAD_COUNT=5
+      - TEST_SUITE=vendor-portal.xml
+    volumes:
+      - ./output/vendor-portal:/home/selenium-docker/test-output
+  flight-reservation:
+    image: babosina/selenium-java
+    environment:
+      - BROWSER=firefox
+      - hubHost=hub
+      - THREAD_COUNT=5
+      - TEST_SUITE=flight-reservation.xml
+    volumes:
+      - ./output/flight-reservation:/home/selenium-docker/test-output
